@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+#include <string>
 
 using namespace std;
 
@@ -14,6 +14,10 @@ private:
 	int pret;
 
 public:
+
+	Masina() {
+
+	}
 	Masina(string mar, string mod, int km1, int pret1) {
 
 		marca = mar;
@@ -53,6 +57,18 @@ public:
 
 	void setPret(int p) {
 		pret = p;
+	}
+
+	string descriere() {
+
+		string text = "";
+
+		text += "Marca: " + marca + "\n";
+		text += "Model: " + model + "\n";
+		text += "Km: " + to_string(km) + "\n";
+		text += "Pret: " + to_string(pret) + "\n\n\n";
+
+		return text;
 	}
 
 };
