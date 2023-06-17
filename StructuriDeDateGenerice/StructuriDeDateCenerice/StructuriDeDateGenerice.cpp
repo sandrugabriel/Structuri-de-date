@@ -1,5 +1,7 @@
 #include "List.h"
-
+#include "solutii.h"
+#include "Stiva.h"
+#include "Coada.h"
 
 void afisareMasini(List<Masina> list) {
 
@@ -27,9 +29,35 @@ void afisarePersoane(List<Persoana> list) {
 
 }
 
+void afisareStiva(Stiva<int> stiva) {
+
+	Node<int>* aux = stiva.getHead();
+
+	while (aux!=NULL)
+	{
+		cout << aux->getData() << endl;
+		aux = aux->getNext();
+	}
+
+
+}
+
+void afisareCoada(Coada<int> coada) {
+
+	Node<int>* aux = coada.getHead();
+
+	while (aux != NULL)
+	{
+		cout << aux->getData() << " ";
+		aux = aux->getNext();
+	}
+
+
+}
 int main()
 {
 
+	/*
 	List<Masina> list;
 
 	Masina data1(1, "test1", "test1", 12000, 30000);
@@ -71,9 +99,31 @@ int main()
 	listPerosana.stergereUltimul();
 	listPerosana.stergerePoz(3);
 
-	cout<<listPerosana.size()<<endl;
-
+	//cout<<listPerosana.size()<<endl;
 	afisarePersoane(listPerosana);
+	*/
 
+	/*Stiva<int> stiva;
 
+	stiva.push(1);
+	stiva.push(2);
+	stiva.push(3);
+	stiva.push(4);
+	stiva.push(5);
+//	stiva.clear();
+	//cout << stiva.contains(1) << endl;
+	afisareStiva(stiva);*/
+
+	Coada<int> coada;
+
+	coada.enqueue(1);
+	coada.enqueue(2);
+	coada.enqueue(3);
+	coada.enqueue(4);
+	coada.enqueue(5);
+	cout << coada.dequeue()<<endl;
+	cout << coada.peek() << endl;
+	cout << coada.contains(3) << endl;
+	//coada.clear();
+	afisareCoada(coada);
 }
