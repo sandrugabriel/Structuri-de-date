@@ -56,7 +56,7 @@ void afisareCoada(Coada<int> coada) {
 }
 int main()
 {
-
+	solutia20();
 	/*
 	List<Masina> list;
 
@@ -114,7 +114,7 @@ int main()
 	//cout << stiva.contains(1) << endl;
 	afisareStiva(stiva);*/
 
-	Coada<int> coada;
+/*	Coada<int> coada;
 
 	coada.enqueue(1);
 	coada.enqueue(2);
@@ -125,5 +125,5 @@ int main()
 	cout << coada.peek() << endl;
 	cout << coada.contains(3) << endl;
 	//coada.clear();
-	afisareCoada(coada);
+	afisareCoada(coada);*/
 }

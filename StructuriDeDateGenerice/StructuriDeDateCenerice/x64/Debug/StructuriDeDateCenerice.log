@@ -1,3 +1,4 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (StructuriDeDateCenerice.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   StructuriDeDateGenerice.cpp
+C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\Coada.h(283): warning C4715: 'Coada<int>::pozUltimPar': not all control paths return a value
   StructuriDeDateCenerice.vcxproj -> C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\x64\Debug\StructuriDeDateGenerice.exe
