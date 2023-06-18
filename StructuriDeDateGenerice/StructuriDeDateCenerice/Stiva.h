@@ -74,6 +74,95 @@ public:
 		return head;
 	}
 
+	int ctPar() {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		while (aux!=NULL)
+		{
+			if (aux->getData() % 2 == 0) ct++;
+
+			aux = aux->getNext();
+		}
+
+		return ct;
+	}
+
+	int ctImpar() {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		while (aux!=NULL)
+		{
+			if (aux->getData() % 2 == 1) ct++;
+
+			aux = aux->getNext();
+		}
+
+		return ct;
+	}
+
+	int maxim(int dim) {
+
+		Node<T>* aux = head;
+		int maxi = -1;
+		while (aux!=NULL)
+		{
+			if (aux->getData() > maxi) maxi = aux->getData();
+
+			aux = aux->getNext();
+		}
+
+		return maxi;
+	}
+
+	int minim(int dim) {
+
+		Node<T>* aux = head;
+
+		int mini = 9999;
+
+		while (aux!=NULL)
+		{
+			if (aux->getData() < mini) mini = aux->getData();
+
+			aux = aux->getNext();
+		}
+
+		return mini;
+	}
+
+	int mediaAritmetica(int dim) {
+
+		Node<T>* aux = head;
+
+		int s = 0;
+
+		for (int i = 0; i < dim; i++) {
+			s += aux->getData();
+			aux=aux->getNext();
+		}
+
+		return s / dim;
+	}
+
+	int ctMaiMareMedia(int dim) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() > mediaAritmetica(dim)) ct++;
+			aux = aux->getNext();
+		}
+
+		return ct;
+	}
 
 };
 
