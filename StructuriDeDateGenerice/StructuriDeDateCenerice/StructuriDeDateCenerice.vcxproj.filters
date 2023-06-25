@@ -42,4 +42,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="numere.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb23.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb24.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb27.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb26.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb25.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb28.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb29.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

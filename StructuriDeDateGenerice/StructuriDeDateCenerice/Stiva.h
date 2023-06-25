@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
+#include <math.h>
 #include "Node.h"
+
 using namespace std;
 
 template<typename T>
@@ -163,6 +165,58 @@ public:
 
 		return ct;
 	}
+
+	bool verificareDiferit(int dim, int nr) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+			
+			if (aux->getData() == nr) return true;
+
+			aux = aux->getNext();
+		}
+
+		return false;
+	}
+
+	int generareNr(int dim) {
+
+		for (int i = 1; i <= 10000; i++) {
+			for (int j = 0; j <= 1000; j++) {
+				int nr = i * pow(10, 9) + i * j * 23 * j + 25;
+
+				if (verificareDiferit(dim, nr) == 0) return nr;
+
+			}
+		}
+
+
+	}
+
+	bool prim(int nr) {
+
+		if (nr == 0 || nr == 1) return false;
+
+		for (int i = 2; i <= nr / 2; i++)
+			if (nr % i == 0) return false;
+
+		return true;
+	}
+
+	int ctPrime(int dim) {
+		
+		Node<T>* aux = head;
+
+		int ct = 0;
+		for (int i = 0; i < dim; i++) {
+			if(prim(aux->getData())) ct++;
+				aux = aux->getNext();
+		}
+
+		return ct;
+	}
+
 
 };
 

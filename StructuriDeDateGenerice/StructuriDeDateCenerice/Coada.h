@@ -296,4 +296,146 @@ public:
 		return s;
 	}
 
+	int primulX(int dim, int x) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() == x) return i + 1;
+
+			aux = aux->getNext();
+		}
+
+		return -1;
+	}
+
+	int ultimulX(int dim,int x){
+	
+		Node<T>* aux = head;
+
+
+		for (int i = 0; i < dim; i++) {
+
+			int ct = 0;
+			Node<T>* nou = head;
+			while (ct<dim-1-i)
+			{
+				nou = nou->getNext();
+				ct++;
+			}
+
+			if (nou->getData() == x) return ct + 1;
+		}
+	
+	
+		return -1;
+	}
+
+	int pozR(int dim, int k, int x) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() == x) ct++;
+
+			if (k == ct) return i + 1;
+
+			aux = aux->getNext();
+		}
+
+		return -1;
+	}
+
+	int maximum(int dim) {
+
+		Node<T>* aux = head;
+		int maxi = -10;
+
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() > maxi) maxi = aux->getData();
+			aux = aux->getNext();
+		}
+
+		return maxi;
+	}
+
+	int ctMaiMare(int dim, int maxi) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			//cout << aux->getData() << " "<<maxi << endl;
+			if (aux->getData() > maxi) {
+				ct++;
+			}
+			aux = aux->getNext();
+		}
+
+		return ct;
+	}
+	
+	void afisareTabeleRest(int dim) {
+
+		Node<T>* aux = head;
+
+		for (int k = 0; k < dim; k++) {
+
+			if (k % 2 == 0) {
+
+				for (int i = 0; i < aux->getData(); i++) {
+					for (int j = 0; j < aux->getData(); j++) {
+						cout << (i + j) % aux->getData()<< " ";
+					}
+					cout << endl;
+				}
+
+			}
+			else
+			{
+				for (int i = 0; i < aux->getData(); i++) {
+					for (int j = 0; j < aux->getData(); j++) {
+						cout << (i * j) % aux->getData()<< " ";
+					}
+					cout << endl;
+				}
+
+			}
+
+			aux = aux->getNext();
+		}
+
+
+	}
+
+	int ultimulNr() {
+
+		Node<T>* aux = head;
+
+		while (aux->getNext() !=NULL)
+		{
+			aux = aux->getNext();
+		}
+
+		return aux->getData();
+	}
+
+	int ctNr(int dim, int nr) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() == nr) ct++;
+			aux = aux->getNext();
+		}
+
+		return ct;
+	}
+
 };

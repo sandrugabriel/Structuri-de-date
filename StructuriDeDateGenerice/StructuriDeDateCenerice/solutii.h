@@ -2,6 +2,7 @@
 #include "List.h"
 #include "Coada.h"
 #include "Stiva.h"
+#include <fstream>
 
 List<int> list;
 
@@ -378,4 +379,320 @@ void solutia20() {
 	//cout << media;
 
 	cout<<stiva.ctMaiMareMedia(dim);
+}
+
+/*Moş Crăciun s-a dus la Polul Nord Shopping City să cumpere n cadouri pentru copiii din întreaga lume. 
+Fiecare cadou avea un cod de bare pentru identificarea produsului, corespunzător unui număr format din 
+nouă cifre, prima cifră fiind nenulă. La plecare şi-a amintit că-i promisese unui copil isteţ un cadou 
+special, care să fie diferit de toate celelalte. Moş Crăciun vă roagă să găsiţi un cadou care să aibă 
+codul de bare diferit de toate celelalte.
+Ex:
+4
+123456789 987654321 112345567 200000001
+se afiseaza 412345678
+*/
+void solutia21() {
+
+	int dim = 4, v[100] = { 1000000025, 987654321, 112345567, 200000001 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+	
+	cout << stiva.generareNr(dim);
+
+}
+
+/*La liceul nostru sunt m clase, fiecare având n elevi. Pentru fiecare elev se cunoaşte talentul artistic, 
+exprimat printr-un număr natural. Să se determine cea mai mare valoare pe care o are talentul artistic al
+elevilor, notată cu MAX şi numărul CNT de clase din liceu în care există elevi care au talent maxim.
+Ex:
+5 4
+1 5 3 5
+4 4 6 1
+6 3 6 2
+1 4 1 4
+6 5 6 2
+se afiseaza 6 3
+*/
+void solutia22() {
+
+	int m = 5, n = 4;
+	int maxi = -10;
+
+	ifstream f("numere.txt");
+
+	f >> m >> n;
+
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			int nr = 0;
+			f >> nr;
+			if (nr > maxi) maxi = nr;
+
+		}
+	}
+
+	f.close();
+	n = m = 0;
+	ifstream g("numere.txt");
+	g >> m >> n;
+	int ct = 0;
+
+	for (int i = 0; i < m; i++) {
+		int semn = 0;
+		for (int j = 0; j < n; j++) {
+			int nr = 0;
+			g >> nr;
+			if (maxi == nr && semn == 0) {
+				ct++;
+				semn = 1;
+			}
+		}
+	}
+
+	cout << maxi << " " << ct;
+
+}
+
+/*Se dă un șir a1, a2, …, an de numere întregi. Se dau de asemenea numerele întregi x și k. Să se determine:
+a) Cea mai din stânga poziție p din șir cu a[p] = x
+b) Cea mai din dreapta poziție q din șir cu a[q] = x
+c) Poziția r a celei de-a k-a apariții a lui x în șir.
+Ex:
+12
+2
+4
+5
+-7
+2
+3
+2
+5
+7
+2
+3
+4
+2
+3
+se afiseaza 
+1 
+10 
+7
+*/
+void solutia23() {
+
+	int dim = 0;
+
+	ifstream f("pb23.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr = 0;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
+	int x, k;
+
+	f >> x >> k;
+
+	cout << coada.primulX(dim,x) << endl;
+	cout << coada.ultimulX(dim, x) << endl;
+	cout << coada.pozR(dim, k,x) << endl;
+
+}
+
+/*Prietenul vostru Turing va cere din nou ajutorul! Acesta isi doreste un calculator cuantic pentru a calcula o suma 
+colosala, imposibila pentru orice om. Momentan nu dispune de resursele materiale si financiare pentru a lucra la nivel
+cuantic asa ca va cere ajutorul vostru in sarcina sa.
+Ex:
+5
+3 2
+5 6 0
+1 1
+7
+5 3
+7 0 4 0 4
+4 2
+2 7 3 4
+3 3
+1000000000 1000000000 999999997
+se afiseaza : 
+11
+7
+15
+16
+2999999997
+*/
+void solutia24() {
+
+	int dim;
+
+	ifstream f("pb24.txt");
+
+	f >> dim;
+
+		int s=0;
+	for (int i = 0; i < dim; i++) {
+
+		int n, k;
+
+		f >> n >> k;
+
+		s = 0;
+		for (int j = 0; j < n; j++) {
+			int nr;
+			f >> nr;
+			s = nr + s;
+			if (i == 4) {
+				cout << nr << endl;
+				cout << "suma: " << s << endl;
+			}
+		
+		}
+		//cout << s << endl;
+
+	}
+
+
+}
+
+/*Se dau două şiruri cu elemente numere naturale. Determinaţi câte dintre elementele primului şir sunt mai 
+mari decât toate elementele celui de-al doilea şir.
+Ex:
+5
+7 8 10 1 9
+6
+1 3 6 2 7 3
+se afiseaza 3
+*/
+void solutia25() {
+
+	int dim = 0, dim1 = 0;
+
+	ifstream f("pb25.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
+	f >> dim1;
+
+	Coada<int> coada1;
+
+	for (int i = 0; i < dim1; i++) {
+		int nr;
+		f >> nr;
+		coada1.enqueue(nr);
+	}
+
+	int maxi = coada1.maximum(dim);
+
+	cout << coada.ctMaiMare(dim, maxi);
+
+}
+
+/*Dându-se un șir cu n elemente numere naturale, să se construiască pentru fiecare element din șir câte un tabel
+al claselor de resturi asociat prin înmulțire dacă indicelele elementului este impar, respectiv prin adunare 
+dacă indicele elementului este par.
+Ex:
+3
+2 4 3
+se afiseaza 
+0 1
+1 0
+0 0 0 0
+0 1 2 3
+0 2 0 2
+0 3 2 1
+0 1 2
+1 2 0
+2 0 1
+*/
+void solutia26() {
+
+	int dim=0;
+
+	ifstream f("pb26.txt");
+
+	for (int i = 0; i < dim; i++) {
+		int nr = 0;
+		f >> nr;
+coada.enqueue(nr);
+	}
+		
+
+	coada.afisareTabeleRest(dim);
+
+}
+
+/*Calculaţi valoarea maxima maxim a celor n numere date şi numărul nrmax de apariţii ale acestei valori în şir.
+ex:
+5
+5 3 2 4 5 se afiseaza 5 2
+*/
+void solutia27() {
+
+	int dim;
+
+	ifstream f("pb27.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		stiva.push(nr);
+	}
+
+	cout << stiva.maxim(dim) << " ";
+}
+
+/*Să se determine câte elemente din şir sunt egale cu ultimul element al acestuia.
+Ex:
+5
+5 3 2 4 5 se afiseaza 2
+*/
+void solutia28() {
+
+	int dim = 0;
+
+	ifstream f("pb28.txt");
+	f >> dim;
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
+	int ultimNr = coada.ultimulNr();
+	//cout << ultimNr;
+	cout << coada.ctNr(dim, ultimNr);
+}
+
+/*Să se determine câte elemente din şir sunt numere prime.
+Ex:
+5
+25 17 2 10 13 se afiseaza 3
+*/
+void solutia29() {
+
+	int dim = 0;
+
+	ifstream f("pb29.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr = 0;
+		f >> nr;
+		stiva.push(nr);
+	}
+
+	cout << stiva.ctPrime(dim);
+
 }
