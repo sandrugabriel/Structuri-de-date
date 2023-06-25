@@ -856,6 +856,34 @@ void solutia35() {
 
 	//coada.afisare();
 	coada.afisarePrimUltim(ct);
+	
+
+}
+
+/*Moș Crăciun însa dorește să le mai aducă zâmbetul pe buze și de aceea a decis să ducă fiecărei case câte o sticlă de 
+șampanie deoarece deși oamenii de aici au bani, nu au magazine de unde să cumpere. Însă din păcate Moș Crăciun 
+este bătrân și nu poate transporta prea multe sticle așa că decide să distribuie câte o sticla de șampanie la 
+fiecare două case. Pentru simplitate Moș Crăciun a făcut o hartă a caselor în care o casă este notată cu 1 și 
+pământul gol cu 0. Moș Crăciun însă nu prea le are cu programarea și de aceea vă roagă să îl ajutați!
+Scrieți un program care primind harta caselor afișează câte sticle de șampanie trebuie să aducă Moș Crăciun.
+Ex:
+7
+1 0 0 1 0 1 1 se afiseaza 6
+*/
+void solutia36() {
+
+	int dim = 0;
+
+	ifstream f("pb36.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr=0;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
 
 
 }
