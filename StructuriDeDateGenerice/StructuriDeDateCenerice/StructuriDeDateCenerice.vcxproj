@@ -139,6 +139,16 @@
     <ClInclude Include="solutii.h" />
     <ClInclude Include="Stiva.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="numere.txt" />
+    <Text Include="pb23.txt" />
+    <Text Include="pb24.txt" />
+    <Text Include="pb25.txt" />
+    <Text Include="pb26.txt" />
+    <Text Include="pb27.txt" />
+    <Text Include="pb28.txt" />
+    <Text Include="pb29.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

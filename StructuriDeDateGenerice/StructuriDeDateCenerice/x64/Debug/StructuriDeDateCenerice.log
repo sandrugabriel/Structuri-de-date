@@ -1,4 +1,9 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (StructuriDeDateCenerice.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   StructuriDeDateGenerice.cpp
+C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\Stiva.h(187,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\Stiva.h(183,6): message : while compiling class template member function 'int Stiva<int>::generareNr(int)'
+C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\solutii.h(400,7): message : see the first reference to 'Stiva<int>::generareNr' in 'solutia21'
+C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\solutii.h(203,12): message : see reference to class template instantiation 'Stiva<int>' being compiled
 C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\Coada.h(283): warning C4715: 'Coada<int>::pozUltimPar': not all control paths return a value
+C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\StructuriDeDateCenerice\Stiva.h(195): warning C4715: 'Stiva<int>::generareNr': not all control paths return a value
   StructuriDeDateCenerice.vcxproj -> C:\Mycode\C++\Structuri de date\Initializare\StructuriDeDateGenerice\x64\Debug\StructuriDeDateGenerice.exe

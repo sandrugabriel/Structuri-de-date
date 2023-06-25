@@ -56,7 +56,7 @@ void afisareCoada(Coada<int> coada) {
 }
 int main()
 {
-	solutia20();
+	solutia29();
 	/*
 	List<Masina> list;
 
