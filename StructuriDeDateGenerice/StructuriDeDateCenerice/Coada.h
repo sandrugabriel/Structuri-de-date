@@ -438,4 +438,148 @@ public:
 		return ct;
 	}
 
+	void afisareSumMaxiPerechi(int dim) {
+
+		Node<T>* aux = head;
+
+		int pozI, pozJ;
+
+		int sumMAxi = -10;
+
+		for (int i = 0; i < dim/2; i++) {
+
+			int nr1 = aux->getData();
+			int nr2 = 0, ct = 0;
+			Node<T>* nou = head;
+			while (ct < dim - 1 - i)
+			{
+				ct++;
+				nou = nou->getNext();
+			}
+
+			nr2 = nou->getData();
+
+			if (nr1 + nr2 >= sumMAxi) {
+				sumMAxi = nr1 + nr2;
+				pozI = i;
+				pozJ = ct;
+			}
+
+			aux = aux->getNext();
+		}
+
+		cout << sumMAxi << " " << pozI << " " << pozJ;
+	}
+
+	void afisareSumaN(int dim) {
+
+
+		for (int i = 0; i < dim; i++) {
+
+			Node<T>* aux = head;
+			int suma = 0;
+			for (int j = 0; j < dim - i; j++) {
+				
+				suma += aux->getData();
+				aux = aux->getNext();
+			}
+			cout << suma << endl;
+		}
+
+
+	}
+
+	void setPoz(int nr, int poz) {
+
+		int ct = 0;
+
+		Node<T>* aux = head;
+
+		while (ct<poz)
+		{
+			ct++;
+			aux = aux->getNext();
+		}
+
+		aux->setData(nr);
+	}
+
+	int getPoz(int poz) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		while (ct<poz)
+		{
+			ct++;
+			aux = aux->getNext();
+		}
+
+		return aux->getData();
+	}
+
+	void crescator(int dim) {
+
+
+		int semn = 1;
+
+		do {
+
+			Node<T>* aux = head;
+			semn = 1;
+			for (int i = 0; i < dim - 1; i++) {
+				if (aux->getData() > aux->getNext()->getData()) {
+
+					int a = getPoz(i);
+					setPoz(getPoz(i+1), i);
+					setPoz(a, i+1);
+					semn = 0;
+				}
+
+				aux = aux->getNext();
+			}
+
+		} while (semn == 0);
+
+	}
+
+	int pozPrimSortat(int dim) {
+
+		Node<T>* aux = head;
+
+		int primulNr = aux->getData();
+
+		crescator(dim);
+		aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() == primulNr) return i + 1;
+			aux = aux->getNext();
+		}
+
+
+	}
+	
+	bool palindrom(int nr) {
+
+		int t = 0,aux=nr;
+
+		while (nr!=0)
+		{
+			int c = nr % 10;
+			t = t * 10 + c;
+			nr /= 10;
+		}
+
+		if (aux == t) return true;
+		return false;
+	}
+
+
+
+
+
+
+
 };
