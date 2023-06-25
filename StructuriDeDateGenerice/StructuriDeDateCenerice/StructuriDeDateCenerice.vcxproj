@@ -148,6 +148,12 @@
     <Text Include="pb27.txt" />
     <Text Include="pb28.txt" />
     <Text Include="pb29.txt" />
+    <Text Include="pb30.txt" />
+    <Text Include="pb31.txt" />
+    <Text Include="pb32.txt" />
+    <Text Include="pb33.txt" />
+    <Text Include="pb34.txt" />
+    <Text Include="pb35.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

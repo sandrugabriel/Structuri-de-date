@@ -217,6 +217,68 @@ public:
 		return ct;
 	}
 
+	bool patratPerfect(int nr) {
+		if (sqrt(nr) == (int)sqrt(nr)) return true;
+		return false;
+	}
+
+	int contor(int nr) {
+
+		int ct = 0;
+
+		while (nr!=0)
+		{
+			ct++;
+			nr /= 10;
+		}
+
+		return ct;
+	}
+
+	void afisarePatratPerfect(int dim) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+
+			int nr = 0;
+
+			nr = aux->getData();
+
+			if(contor(nr)>2)
+				nr = nr / pow(10, contor(nr )/ 2);
+
+			if (patratPerfect(nr)) cout << aux->getData() << " ";
+
+			aux = aux->getNext();
+		}
+
+	}
+
+	int factorial(int dim) {
+
+		Node<T>* aux = head;
+
+		int fact = 1;
+
+		for (int i = 1; i <= dim; i++) fact *= i;
+
+		return fact;
+	}
+
+	void dividFactorialul(int dim, int fact) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+
+			if (fact % aux->getData() == 0) cout << aux->getData() << " ";
+
+			aux = aux->getNext();
+		}
+	}
+
+
 
 };
 

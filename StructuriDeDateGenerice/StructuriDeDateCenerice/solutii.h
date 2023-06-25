@@ -696,3 +696,166 @@ void solutia29() {
 	cout << stiva.ctPrime(dim);
 
 }
+
+/*Să se afișeze elementele din șir care au proprietatea că primele două cifre din scrierea zecimală formează un pătrat perfect.
+Ex:
+5
+253 16 225 100 3678 se afiseaza 253 16 3678
+*/
+void solutia30() {
+
+	int dim = 0;
+
+	ifstream f("pb30.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		stiva.push(nr);
+	}
+
+	stiva.afisarePatratPerfect(dim);
+
+}
+
+/*Să se determine perechea de elemente egal depărtate de centru pentru care suma valorilor este maximă. 
+Dacă sunt mai multe perechi cu suma maximă se va determina perechea cea mai apropiată de capete.
+Ex:
+7
+6 2 5 4 3 6 1 se afiseaza 8 2 4
+*/
+void solutia31() {
+
+	int dim = 0;
+
+	ifstream f("pb31.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
+	coada.afisareSumMaxiPerechi(dim);
+
+}
+
+/*Se dă un şir cu n numere naturale. Să se afişeze suma primilor n termeni din şir, apoi suma primilor n-1 termeni din şir, şi aşa mai departe.
+Ex:
+4
+1 7 3 4 se afiseaza 
+15
+11
+8
+1
+*/
+void solutia32() {
+
+	int dim = 0;
+
+	ifstream f("pb32.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
+	coada.afisareSumaN(dim);
+
+}
+
+/*Se dă un şir cu n numere naturale distincte două câte două. Să se determine poziţia pe care s-ar afla primul element al şirului în şirul sortat.
+Ex:
+6
+267 13 45 628 7 79 se afiseaza 5
+*/
+void solutia33() {
+
+	int dim = 0;
+
+	ifstream f("pb33.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		coada.enqueue(nr);
+	}
+
+	//coada.setPoz(1234, 3);
+	//coada.crescator(dim);
+	//coada.afisare();
+	cout << coada.pozPrimSortat(dim);
+
+}
+
+/*Se da un vector cu n elemente. Sa se afișeze pe ecran elementele din vector care divid factorialul numărului de elemente n.
+Ex:
+5
+16 3 71 30 25 se afiseaza 3 30 
+*/
+void solutia34() {
+
+	int dim = 0;
+
+	ifstream f("pb34.txt");
+
+	f >> dim;
+
+	for (int i = 0; i < dim; i++) {
+		int nr = 0;
+		f >> nr;
+		stiva.push(nr);
+	}
+
+	int factorial = stiva.factorial(dim);
+	//cout << factorial;
+
+	stiva.dividFactorialul(dim,factorial);
+}
+
+/*Fișierul palindromsd.in conține cel mult 1000 de numere naturale, câte un număr pe fiecare linie. 
+Să se afișeze numerele palindrom din fișier în ordinea primul, ultimul, al doilea, penultimul etc.
+Ex:
+11
+21
+303
+4114
+51
+66
+75
+808
+ se afiseaza 11 808 303 66 4114
+*/
+void solutia35() {
+
+	int dim = 0;
+
+	ifstream f("pb35.txt");
+
+	f >> dim;
+	int ct = 0;
+	for (int i = 0; i < dim; i++) {
+		int nr;
+		f >> nr;
+		if (coada.palindrom(nr) == true) {
+			ct++;
+			coada.enqueue(nr);
+		}
+	}
+
+	//cout << coada.palindrom(1234);
+
+	//coada.afisare();
+	coada.afisarePrimUltim(ct);
+
+
+}

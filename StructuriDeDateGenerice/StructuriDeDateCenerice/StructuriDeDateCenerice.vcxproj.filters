@@ -67,5 +67,23 @@
     <Text Include="pb29.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="pb30.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb31.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb32.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb33.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb34.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb35.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
