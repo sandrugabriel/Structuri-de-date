@@ -85,5 +85,8 @@
     <Text Include="pb35.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="pb36.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

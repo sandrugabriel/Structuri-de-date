@@ -154,6 +154,7 @@
     <Text Include="pb33.txt" />
     <Text Include="pb34.txt" />
     <Text Include="pb35.txt" />
+    <Text Include="pb36.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
